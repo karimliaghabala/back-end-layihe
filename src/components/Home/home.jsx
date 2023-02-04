@@ -17,17 +17,20 @@ const Home = () => {
         setForm(false)
         setSvg1(false)
         setSearchr(true)
+        setCoin(false)
     }
 
     const onClickSvg = () => {
         setSvg1(true)
         setForm(true)
         setCoin(false)
+        setSearchr(false)
     }
     const onClickSvg2 = ()=>{
         setSvg1(false)
         setForm(false)
         setCoin(true)
+        setSearchr(false)
     }
     return (
         <div className='container'>

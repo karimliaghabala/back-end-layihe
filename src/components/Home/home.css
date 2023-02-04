@@ -32,6 +32,7 @@
     margin: 0px 30px 5px 0px;
 }
 .input-search>button{
+    cursor: pointer;
     width: 120px;
     height: 48px;
     background-color: #833AE0;

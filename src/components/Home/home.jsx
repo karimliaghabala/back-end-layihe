@@ -16,6 +16,8 @@ const Home = () => {
 
     const onClickButton = (e)=>{
         e.preventDefault()
+        setForm(false)
+        setSvg1(false)
     }
 
     const onClickSvg = () => {

@@ -3,7 +3,7 @@
     display: flex;
     justify-content:space-around;
     align-items: center;
-    margin-left:120px;
+    margin-left:100px;
 }
 .coins-name{
     font-size: 28px;

@@ -1,0 +1,32 @@
+.container-i{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+.container-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 30px;
+}
+.left-info img{
+    width: 250px;
+    height: 250px;
+}
+.left-info{
+    display: block;
+}
+.right-info{
+    background-color: rgba(196, 196, 196, 0.5);
+    padding: 30px;
+    margin:20px
+}
+table{
+    border: 1px solid black;
+    width: 100%;
+}
+tr:nth-child(odd){
+    background-color: white;
+}

@@ -1,0 +1,23 @@
+.container-c{
+    display: flex;
+    margin-left: 120px;
+}
+.img-c{
+    width: 120px;
+    height: 120px;
+    margin-right: 50px;
+}
+.coin-row{
+    display: flex;
+    margin-bottom: 30px;
+}
+.left-rows{
+    margin-right: 150px;
+}
+.right-rows{
+    margin-right: 150px;
+}
+h4{
+    color: #833AE0;
+    font-size: 16px;
+}

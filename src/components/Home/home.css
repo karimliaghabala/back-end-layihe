@@ -50,34 +50,6 @@
     position:absolute;
     top:14px;
 }
-.section-coins{
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-}
-.coins-name{
-    font-size: 28px;
-    font-weight: 500;
-}
-.links{
-    font-size: 14px;
-    text-decoration: none;
-    color: black;
-}
-.link-icon{
-    display: flex;
-    align-items: center;
-}
-.link-icon img{
-    width: 15px;
-    height: 15px;
-}
-.img-coins{
-    width: 180px;
-    height: 180px;
-    margin-top: 5px;
-}
-
 .section-filter{
     display: flex;
     margin-left: 120px;

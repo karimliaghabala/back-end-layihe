@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.container{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    display: block;
+    margin-left: 120px;
+}
+.header>h1{
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 300;
+}
+.header>p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.input-search{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.input-search>input{
+    width: 374px;
+    height: 44px;
+    border:1px solid #000000;
+    margin: 0px 30px 5px 0px;
+}
+.input-search>button{
+    width: 120px;
+    height: 48px;
+    background-color: #833AE0;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.filter{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+}
+.svg>img{
+    position:absolute;
+    top:14px;
+}
+.section-coins{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.coins-name{
+    font-size: 28px;
+    font-weight: 500;
+}
+.links{
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+.link-icon{
+    display: flex;
+    align-items: center;
+}
+.link-icon img{
+    width: 15px;
+    height: 15px;
+}
+.img-coins{
+    width: 180px;
+    height: 180px;
+    margin-top: 5px;
+}
+
+.section-filter{
+    display: flex;
+    margin-left: 120px;
+}
+.left-f{
+    display: block;
+    margin-right: 50px;
+}
+.left-f>p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.right-f input{
+    margin: 10px;
+    width: 155px;
+    height: 48px;
+}
+.right-f p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+select{
+    width: 374px;
+    height: 48px;
+}

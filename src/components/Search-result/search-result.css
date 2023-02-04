@@ -17,7 +17,11 @@
 .right-rows{
     margin-right: 150px;
 }
-h4{
+a{
+    
+    
+    text-decoration: none;
     color: #833AE0;
     font-size: 16px;
+    font-weight: 500;
 }

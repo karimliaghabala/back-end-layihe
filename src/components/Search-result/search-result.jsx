@@ -1,6 +1,7 @@
 import React from 'react'
 import './search-result.css'
 import Coin from '../../assets/images/coin1.png'
+import {Link} from 'react-router-dom'
 
 const Search_result = () => {
     return (
@@ -9,21 +10,21 @@ const Search_result = () => {
                 <div className="coin-row">
                     <div><img className="img-c" src={Coin} alt="" /></div>
                     <div>
-                        <h4>Canadian Beaver</h4>
+                        <Link to="/info">Canadian Beaver</Link>
                         <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
                     </div>
                 </div>
                 <div className="coin-row">
                     <div><img className="img-c" src={Coin} alt="" /></div>
                     <div>
-                        <h4>Canadian Beaver</h4>
+                        <Link to="/info">Canadian Beaver</Link>
                         <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
                     </div>
                 </div>
                 <div className="coin-row">
                     <div><img className="img-c" src={Coin} alt="" /></div>
                     <div>
-                        <h4>Canadian Beaver</h4>
+                        <Link to="/info">Canadian Beaver</Link>
                         <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
                     </div>
                 </div>
@@ -33,22 +34,22 @@ const Search_result = () => {
                 <div className="coin-row">
                     <div><img className="img-c" src={Coin} alt="" /></div>
                     <div>
-                        <h4>Canadian Beaver</h4>
+                        <Link to="/info">Canadian Beaver</Link>
                         <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
                     </div>
                 </div>
                 <div className="coin-row">
                     <div><img className="img-c" src={Coin} alt="" /></div>
                     <div>
-                        <h4>Canadian Beaver</h4>
+                        <Link to="/info">Canadian Beaver</Link>
                         <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
                     </div>
                 </div>
                 <div className="coin-row">
                     <div><img className="img-c" src={Coin} alt="" /></div>
                     <div>
-                        <h4>Canadian Beaver</h4>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
+                        <Link to="/info">Canadian Beaver</Link>
+                        <p>"Canadian beaver ". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
                     </div>
                 </div>
             </div>

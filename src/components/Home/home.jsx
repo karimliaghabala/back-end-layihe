@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState,useRef} from 'react';
 import Coins from '../Coins/coins'
 import Search_result from '../Search-result/search-result'
 import './home.css';
@@ -12,13 +12,14 @@ const Home = () => {
     const [coin,setCoin] = useState(true)
     const [searchr,setSearchr] = useState(false)
 
+    
     const onClickButton = (e)=>{
         e.preventDefault()
         setForm(false)
         setSvg1(false)
         setSearchr(true)
         setCoin(false)
-    }
+        }
 
     const onClickSvg = () => {
         setSvg1(true)

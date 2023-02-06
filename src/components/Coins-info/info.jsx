@@ -1,6 +1,7 @@
 import React from 'react'
 import './info.css'
 import Coin from '../../assets/images/coin1.png'
+import {Link} from 'react-router-dom'
 
 const Info = () => {
   return (
@@ -51,6 +52,7 @@ const Info = () => {
               <td>40$</td>
             </tr>
           </table>
+          <Link to="/">Back</Link>
         </div>
       </div>
     </div>

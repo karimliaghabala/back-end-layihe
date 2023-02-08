@@ -1,6 +1,7 @@
 .container-c{
     display: flex;
     margin-left: 120px;
+    margin-top: 100px;
 }
 .img-c{
     width: 120px;
@@ -18,10 +19,21 @@
     margin-right: 150px;
 }
 a{
-    
-    
     text-decoration: none;
     color: #833AE0;
     font-size: 16px;
     font-weight: 500;
+}
+.back{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 120px;
+    height: 48px;
+    background-color: #833AE0;
+    color: white;
+    font-size: 18px;
+    right: 120px;
 }

@@ -12,7 +12,7 @@ const Coins = () => {
                 <div className="bullion-coins">
                     <p className='coins-name'>Bullion coins</p>
                     <div className="link-icon">
-                        <Link className='links' to="/">Show all</Link>
+                        <Link className='links' to="/bcoins">Show all</Link>
                         <img src={Svg3} alt="" />
                     </div>
                     <img className='img-coins' src={Coin1} alt="" />
@@ -20,7 +20,7 @@ const Coins = () => {
                 <div className="exclusive-coins">
                     <p className='coins-name'>Exclusive coins</p>
                     <div className="link-icon">
-                        <Link className='links' to="/">Show all</Link>
+                        <Link className='links' to="/ecoins">Show all</Link>
                         <img src={Svg3} alt="" />
                     </div>
                     <img className='img-coins' src={Coin2} alt="" />
@@ -29,7 +29,7 @@ const Coins = () => {
                 <div className="commemorative-coins">
                     <p className='coins-name'>Commemorative coins</p>
                     <div className="link-icon">
-                        <Link className='links' to="/">Show all</Link>
+                        <Link className='links' to="/ccoins">Show all</Link>
                         <img src={Svg3} alt="" />
                     </div>
                     <img className='img-coins' src={Coin3} alt="" />

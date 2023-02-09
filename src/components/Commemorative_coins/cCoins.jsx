@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom'
 
 const Ccoins = () => {
     return (
+        <div>
+        <h1>Commemorative coins</h1>
         <div className='container-c'>
             <div className="left-rows">
                 <div className="coin-row">
@@ -54,6 +56,7 @@ const Ccoins = () => {
                 </div>
                 <Link className='back' to='/'>Back</Link>
             </div>
+        </div>
         </div>
     )
 }

@@ -12,7 +12,7 @@ const Bcoins = () => {
     console.log(data[0])
     return (
         <div>
-            <h1>Billion coins</h1>
+            <h1>Exclusive coins</h1>
             <div className='container-c'>
                 <div className="left-rows">
                     <ul>

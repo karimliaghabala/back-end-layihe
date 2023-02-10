@@ -76,3 +76,6 @@ select{
     width: 374px;
     height: 48px;
 }
+h1{
+    cursor: pointer;
+}

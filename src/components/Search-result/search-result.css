@@ -41,3 +41,6 @@ a{
 h1{
     margin-left:140px
 }
+li{
+    list-style: none;
+}

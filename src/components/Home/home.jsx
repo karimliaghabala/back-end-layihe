@@ -1,4 +1,4 @@
-import React, { useState,useRef} from 'react';
+import React, { useState} from 'react';
 import Coins from '../Coins/coins'
 import Search_result from '../Search-result/search-result'
 import './home.css';
@@ -33,11 +33,17 @@ const Home = () => {
         setCoin(true)
         setSearchr(false)
     }
+    const falseData = ()=>{
+        setForm(false)
+        setSvg1(false)
+        setSearchr(false)
+        setCoin(true)
+    }
     return (
         <div className='container'>
             <form action="">
                 <div className="header">
-                    <h1>HOMEPAGE</h1>
+                    <h1 onClick={falseData}>HOMEPAGE</h1>
                     <p>Input field</p>
                     <div className="input-search">
                         <input type="text" />

@@ -1,60 +1,38 @@
-import React from 'react'
-import './search-result.css'
-import Coin from '../../assets/images/coin1.png'
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import '../Search-result/search-result.css'
+import { Link } from 'react-router-dom'
 
-const Search_result = () => {
+const Bcoins = () => {
+    const [data, setData] = useState([])
+    useEffect(() => {
+        fetch('https://excample-api.vercel.app/')
+            .then(res => res.json())
+            .then(apiData => setData(apiData))
+    }, [])
+    console.log(data[0])
     return (
-        <div className='container-c'>
-            <div className="left-rows">
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="right-rows">
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver ". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
+        <div>
+            <h1>Coins</h1>
+            <div className='container-c'>
+                <div className="left-rows">
+                    <ul>
+                        {data?.map((post) => (
+                            <li key={post.id}>
+                                <div className="coin-row" >
+                                    <div><img className="img-c" src={post.link1} alt="img" /></div>
+                                    <div>
+                                        <Link to="/info">{post.texth1}</Link>
+                                        <p>{post.textshort}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>
+
     )
 }
 
-export default Search_result
+export default Bcoins

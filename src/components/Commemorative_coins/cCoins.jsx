@@ -1,64 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Search-result/search-result.css'
-import Coin from '../../assets/images/coin1.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Ccoins = () => {
+const Bcoins = () => {
+    const [data, setData] = useState([])
+    useEffect(() => {
+        fetch('https://excample-api.vercel.app/')
+            .then(res => res.json())
+            .then(apiData => setData(apiData))
+    }, [])
+    console.log(data[0])
     return (
         <div>
-        <h1>Commemorative coins</h1>
-        <div className='container-c'>
-            <div className="left-rows">
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
+            <h1>Billion coins</h1>
+            <div className='container-c'>
+                <div className="left-rows">
+                    <ul>
+                        {data?.map((post) => (
+                            <li key={post.id}>{post.typecoins=="Commemorative coins"?
+                                <div className="coin-row" >
+                                    <div><img className="img-c" src={post.link1} alt="img" /></div>
+                                    <div>
+                                        <Link to="/info">{post.texth1}</Link>
+                                        <p>{post.textshort}</p>
+                                    </div>
+                                </div>:null}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
+            <Link className='back' to='/'>Back</Link>
+        </div>
 
-            <div className="right-rows">
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <div className="coin-row">
-                    <div><img className="img-c" src={Coin} alt="" /></div>
-                    <div>
-                        <Link to="/info">Canadian Beaver</Link>
-                        <p>"Canadian beaver ". Unique coin with the image of a beaver. Face value - 5 cents. Created under Elizabeth II.</p>
-                    </div>
-                </div>
-                <Link className='back' to='/'>Back</Link>
-            </div>
-        </div>
-        </div>
     )
 }
 
-export default Ccoins
+export default Bcoins

@@ -17,6 +17,7 @@ const Bcoins = () => {
             <div className='container-c'>
                 <div className="left-rows">
                     <div className="coin-row">
+
                         <div><img className="img-c" src={Coin} alt="" /></div>
                         <div>
                             <Link to="/info">Canadian beaver</Link>

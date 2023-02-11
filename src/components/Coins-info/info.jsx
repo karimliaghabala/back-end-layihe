@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './info.css'
 import Coin from '../../assets/images/coin1.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Info = () => {
+
+  const [data, setData] = useState([])
+  useEffect(() => {
+    fetch('https://excample-api.vercel.app/')
+      .then(res => res.json())
+      .then(apiData => setData(apiData))
+  }, [])
   return (
     <div className="container-i">
       <div className="container-info">
@@ -11,7 +18,6 @@ const Info = () => {
           <div><img src={Coin} alt="" /></div>
           <div><img src={Coin} alt="" /></div>
         </div>
-
         <div className="right-info">
           <div className="text-info">
             <h2>Canadian Beaver</h2>
@@ -23,7 +29,8 @@ const Info = () => {
             </p>
           </div>
           <table>
-            <tr>
+            <tbody>
+              <tr>
               <th>Issuing Country</th>
               <th>CANADA</th>
             </tr>
@@ -51,6 +58,7 @@ const Info = () => {
               <td>Price</td>
               <td>40$</td>
             </tr>
+            </tbody>
           </table>
           <Link to="/">Back</Link>
         </div>

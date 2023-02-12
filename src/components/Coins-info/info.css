@@ -30,3 +30,11 @@ table{
 tr:nth-child(odd){
     background-color: white;
 }
+.right-info a{
+    position: relative;
+    top: 15px;
+    background-color: blue;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}

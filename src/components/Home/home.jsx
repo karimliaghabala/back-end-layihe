@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Coins from '../Coins/coins'
 import Search_result from '../Search-result/search-result'
 import './home.css';
@@ -9,17 +9,17 @@ const Home = () => {
 
     const [svg1, setSvg1] = useState(false)
     const [form, setForm] = useState(false)
-    const [coin,setCoin] = useState(true)
-    const [searchr,setSearchr] = useState(false)
+    const [coin, setCoin] = useState(true)
+    const [searchr, setSearchr] = useState(false)
 
-    
-    const onClickButton = (e)=>{
+
+    const onClickButton = (e) => {
         e.preventDefault()
         setForm(false)
         setSvg1(false)
         setSearchr(true)
         setCoin(false)
-        }
+    }
 
     const onClickSvg = () => {
         setSvg1(true)
@@ -27,18 +27,24 @@ const Home = () => {
         setCoin(false)
         setSearchr(false)
     }
-    const onClickSvg2 = ()=>{
+    const onClickSvg2 = () => {
         setSvg1(false)
         setForm(false)
         setCoin(true)
         setSearchr(false)
     }
-    const falseData = ()=>{
+    const falseData = () => {
         setForm(false)
         setSvg1(false)
         setSearchr(false)
         setCoin(true)
     }
+    const [data, setData] = useState([])
+    useEffect(() => {
+        fetch('https://excample-api.vercel.app/')
+            .then(res => res.json())
+            .then(apiData => setData(apiData))
+    }, [])
     return (
         <div className='container'>
             <form action="">
@@ -52,55 +58,54 @@ const Home = () => {
                     <div className="filter">
                         <p>Advanced filter</p>
                         <div className="svg" >
-                            {svg1 ? <img onClick={onClickSvg2} src={Svg1} alt="" /> : <img onClick={onClickSvg}  src={Svg2} alt="" />}
+                            {svg1 ? <img onClick={onClickSvg2} src={Svg1} alt="" /> : <img onClick={onClickSvg} src={Svg2} alt="" />}
                         </div>
                     </div>
                 </div>
-                {form?<div className="section-filter">
+                {form ? <div className="section-filter">
                     <div className="left-f">
                         <p>Issuing country</p>
                         <select>
-                            <option>Canada</option>
-                            <option>ABŞ</option>
-                            <option>Almaniya</option>
+                            {data?.map(item => (
+                                <option>{item.country}</option>
+                            ))}
+                        </select>
+                        <p>Composition</p>
+                        <select>
+                            {data?.map(item => (
+                                <option>{item.composition}</option>
+                            ))}
                         </select>
 
-                        <p>Metal</p>
+                        <p>Quality</p>
                         <select>
-                            <option>Gold</option>
-                            <option>Silver</option>
-                            <option>Platin</option>
-                        </select>
-
-                        <p>Quality of the coin</p>
-                        <select>
-                            <option>Proof</option>
+                            {data?.map(item => (
+                                <option>{item.quality}</option>
+                            ))}
                         </select>
                     </div>
                     <div className="right-f">
                         <div>
-                            <p>Price</p>
-                            <label>from
-                                <input type="text" />
-                            </label>
-                            <label>to
-                                <input type="text" />
-                            </label>
+                            <p>Price</p>            
+                                <select>
+                                {data?.map(item => (
+                                    <option>{item.price}</option>
+                                ))}
+                            </select>
                         </div>
                         <div>
-                            <p>Year of issue</p>
-                            <label>from
-                                <input type="text" />
-                            </label>
-                            <label>to
-                                <input type="text" />
-                            </label>
+                            <p>Year of issue</p>                
+                                <select>
+                                {data?.map(item => (
+                                    <option>{item.year}</option>
+                                ))}
+                            </select>
                         </div>
                     </div>
-                </div>:null}
+                </div> : null}
             </form>
-            {searchr?<Search_result /> :null}
-            {coin? <Coins /> :null}
+            {searchr ? <Search_result /> : null}
+            {coin ? <Coins /> : null}
         </div>
     )
 }

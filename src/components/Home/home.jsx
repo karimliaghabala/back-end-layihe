@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import Coins from '../Coins/coins'
 import '../Search-result/search-result.css'
 import './home.css';
@@ -12,8 +12,9 @@ const Home = () => {
     const [coin, setCoin] = useState(true)
     const [searchr, setSearchr] = useState(false)
     const [data, setData] = useState([])
-    const [sData, setSData] = useState([])
-    const inputRef = useRef(null);
+    const [dataS, setDataS] = useState([])
+    const [inputValue, setInputValue] = useState('')
+
 
     const onClickButton = (e) => {
         e.preventDefault()
@@ -46,14 +47,12 @@ const Home = () => {
             .then(apiData => setData(apiData))
     }, [])
     useEffect(() => {
-        const url = 'https://excample-api.vercel.app/search'
-        const query = encodeURIComponent(inputRef.value)
-        fetch(`${url}?q=${query}`)
+        const url = 'https://excample-api.vercel.app/'
+        fetch(`${url}?q=${inputValue}`)
             .then(res => res.json())
-            .then(apiSData => setSData(apiSData))
+            .then(apiDataS => setDataS(apiDataS))
     }, [])
-    console.log(sData)
-    console.log(inputRef.value)
+    console.log(dataS)
     return (
         <div className='container'>
             <form action="">
@@ -61,7 +60,7 @@ const Home = () => {
                     <h1 onClick={falseData}>HOMEPAGE</h1>
                     <p>Input field</p>
                     <div className="input-search">
-                        <input type="text" ref={inputRef} />
+                        <input type="text" onChange={(e)=>{setInputValue(e.target.value)}} />
                         <button onClick={onClickButton} >Search</button>
                     </div>
                     <div className="filter">
